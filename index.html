@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafs Cup Drought Tracker 🍃😭</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">🍃 Leafs Cup Drought Tracker 😭</h1>
+            <p class="subtitle">The official countdown of disappointment</p>
+        </header>
+
+        <main>
+            <div class="drought-counter">
+                <div class="last-win-date">
+                    <h2>Last Stanley Cup Victory:</h2>
+                    <div class="historic-date">May 2, 1967</div>
+                    <p class="fun-fact">When Expo 67 was still a thing and your grandparents were young!</p>
+                </div>
+
+                <div class="time-display">
+                    <div class="time-unit">
+                        <span class="number" id="years">0</span>
+                        <span class="label">Years</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number" id="months">0</span>
+                        <span class="label">Months</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number" id="days">0</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number" id="hours">0</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number" id="minutes">0</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number" id="seconds">0</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h2>Embarrassing Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-days">0</div>
+                        <div class="stat-label">Total Days of Suffering</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="playoff-rounds">0</div>
+                        <div class="stat-label">Playoff Rounds Lost</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="generations">0</div>
+                        <div class="stat-label">Generations of Disappointment</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">Teams That Have Won Since</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2>What the Leafs HAVE Achieved Since 1967</h2>
+                <div class="achievements-list">
+                    <div class="achievement">🏆 Mastered the art of first-round exits</div>
+                    <div class="achievement">📈 Perfected raising ticket prices</div>
+                    <div class="achievement">💰 Became the most valuable team without cups</div>
+                    <div class="achievement">😭 Made grown men cry every spring</div>
+                    <div class="achievement">🤡 Provided endless meme material</div>
+                    <div class="achievement">⚰️ Buried multiple generations of hopes</div>
+                </div>
+            </div>
+
+            <div class="fun-facts-section">
+                <h2>Things That Have Happened Since The Leafs Last Won</h2>
+                <div class="facts-container">
+                    <div class="fact-item">🚀 Humans landed on the moon (12 times!)</div>
+                    <div class="fact-item">💻 The internet was invented</div>
+                    <div class="fact-item">📱 Smartphones became a thing</div>
+                    <div class="fact-item">🇨🇦 Canada got a new flag</div>
+                    <div class="fact-item">🎮 Video games were invented and became huge</div>
+                    <div class="fact-item">🌍 The Berlin Wall fell</div>
+                    <div class="fact-item">🏒 18 different NHL teams won cups</div>
+                    <div class="fact-item">👴 Multiple generations of Leafs fans came and went</div>
+                </div>
+            </div>
+
+            <div class="troll-section">
+                <div class="rotating-message">
+                    <p id="troll-message">Still waiting... 🍃</p>
+                </div>
+                <button class="refresh-btn" onclick="window.location.reload()">
+                    Refresh for More Disappointment
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="disclaimer">No Leafs fans were harmed in the making of this website... they were already broken.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
