@@ -2,10 +2,6 @@
 
 A fun trolling website that tracks exactly how long it's been since the Toronto Maple Leafs last won the Stanley Cup (May 2, 1967).
 
-## 🎯 Purpose
-
-This website is designed to lovingly troll your Leafs-loving friends by showing them the precise time elapsed since their team's last championship victory. Perfect for group chats, social media, or just keeping the suffering visible!
-
 ## ✨ Features
 
 - **Real-time countdown** showing years, months, days, hours, minutes, and seconds since May 2, 1967
@@ -75,19 +71,9 @@ The Toronto Maple Leafs last won the Stanley Cup on **May 2, 1967**, defeating t
 - **Family gatherings** - Bring data to your hockey arguments
 - **Any time** - The suffering never stops!
 
-## 🛠️ Customization
-
-Want to modify it? The code is clean and well-commented:
-- Change the messages in the `TROLL_MESSAGES` array
-- Modify the styling in `style.css`
-- Add new statistics or facts
-- Adjust the animations and effects
-
 ## ⚠️ Disclaimer
 
 No actual Leafs fans were harmed in the making of this website... they were already broken. Use responsibly and remember: it's all in good fun! 
-
-*Made with 💔 for your Leafs-loving friend*
 
 ---
 
