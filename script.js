@@ -2,21 +2,71 @@
 // May 2, 1967 - Game 6 at Maple Leaf Gardens
 const LEAFS_LAST_CUP = new Date('1967-05-02T22:00:00'); // Approximate end time of game
 
+// The date when Mitch Marner left the Leafs (July 1, 2025 - Free Agency Day)
+const MARNER_LEFT_DATE = new Date('2025-07-01T00:00:00'); // Free agency starts at midnight
+
 // Array of trolling messages to rotate through
 const TROLL_MESSAGES = [
     "Still waiting... 🍃",
-    "Maybe next year? 😂",
+    "Maybe next century? 😂",
     "The drought continues... 💧",
     "Hope springs eternal... and dies 💀",
-    "It's been 84 years... oh wait, more 👴",
-    "Your friend still believes? 🤡",
+    "It's been 84 years... actually more 👴",
+    "Your grandkids will see it... maybe 🤡",
     "At least they're consistent! 📉",
-    "The math doesn't lie 📊",
+    "The math is brutal 📊",
     "Tick... tock... tick... tock ⏰",
-    "Pain is eternal in Toronto 😭"
+    "Pain is tradition in Toronto 😭",
+    "Currently experiencing technical difficulties 🚧",
+    "404: Cup not found 🔍"
+];
+
+// Array of Marner-specific troll messages
+const MARNER_TROLL_MESSAGES = [
+    "Finally free from the pressure! 🎉",
+    "$11M well spent... elsewhere 💸",
+    "Someone else's playoff problem now! 😌",
+    "No more choking in blue and white! 🥅",
+    "The cap space feels so good 💰",
+    "Addition by subtraction 📉➡️📈",
+    "Can't hurt you anymore, Toronto 🩹",
+    "Living his best life post-Leafs ✈️",
+    "Probably winning cups somewhere else 🏆",
+    "The curse follows players, not teams... right? 🤞",
+    "Freedom tastes like victory 🥳",
+    "Escaped before the next collapse 🏃‍♂️💨"
 ];
 
 let trollMessageIndex = 0;
+let marnerTrollMessageIndex = 0;
+
+// Function to calculate time difference for Marner
+function calculateMarnerTimeDifference() {
+    const now = new Date();
+    const difference = now - MARNER_LEFT_DATE;
+    
+    // If the date hasn't passed yet, show zeros or a "coming soon" message
+    if (difference < 0) {
+        return {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            isComingSoon: true
+        };
+    }
+    
+    // Calculate each unit
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    
+    return {
+        days,
+        hours,
+        minutes,
+        isComingSoon: false
+    };
+}
 
 // Function to calculate time difference
 function calculateTimeDifference() {
@@ -57,6 +107,18 @@ function updateDisplay() {
     document.getElementById('minutes').textContent = timeDiff.minutes;
     document.getElementById('seconds').textContent = timeDiff.seconds;
     
+    // Update Marner countdown
+    const marnerDiff = calculateMarnerTimeDifference();
+    if (marnerDiff.isComingSoon) {
+        document.getElementById('marner-days').textContent = "Soon™";
+        document.getElementById('marner-hours').textContent = "Soon™";
+        document.getElementById('marner-minutes').textContent = "Soon™";
+    } else {
+        document.getElementById('marner-days').textContent = marnerDiff.days.toLocaleString();
+        document.getElementById('marner-hours').textContent = marnerDiff.hours;
+        document.getElementById('marner-minutes').textContent = marnerDiff.minutes;
+    }
+    
     // Update stats
     document.getElementById('total-days').textContent = timeDiff.totalDays.toLocaleString();
     
@@ -94,6 +156,18 @@ function rotateTrollMessage() {
         messageElement.textContent = TROLL_MESSAGES[trollMessageIndex];
         messageElement.style.opacity = '1';
         trollMessageIndex = (trollMessageIndex + 1) % TROLL_MESSAGES.length;
+    }, 300);
+}
+
+// Function to rotate Marner troll messages
+function rotateMarnerTrollMessage() {
+    const messageElement = document.getElementById('marner-message');
+    messageElement.style.opacity = '0';
+    
+    setTimeout(() => {
+        messageElement.textContent = MARNER_TROLL_MESSAGES[marnerTrollMessageIndex];
+        messageElement.style.opacity = '1';
+        marnerTrollMessageIndex = (marnerTrollMessageIndex + 1) % MARNER_TROLL_MESSAGES.length;
     }, 300);
 }
 
@@ -207,6 +281,7 @@ function init() {
     // Set up intervals
     setInterval(updateDisplay, 1000); // Update every second
     setInterval(rotateTrollMessage, 5000); // Change message every 5 seconds
+    setInterval(rotateMarnerTrollMessage, 4000); // Change Marner message every 4 seconds (slightly offset)
     setInterval(createFloatingLeaf, 3000); // Create a floating leaf every 3 seconds
     setInterval(showContextualFacts, 30000); // Add contextual facts every 30 seconds
     

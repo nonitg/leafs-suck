@@ -15,101 +15,176 @@
             <p class="subtitle">The official countdown of disappointment</p>
         </header>
 
-        <main>
-            <div class="drought-counter">
-                <div class="last-win-date">
-                    <h2>Last Stanley Cup Victory:</h2>
+        <main class="main-grid">
+            <!-- Main Drought Counter - Full Width -->
+            <div class="widget widget-full drought-counter">
+                <div class="widget-header">
+                    <h2>🏆 Last Stanley Cup Victory</h2>
+                </div>
+                <div class="widget-content">
                     <div class="historic-date">May 2, 1967</div>
-                </div>
-
-                <div class="time-display">
-                    <div class="time-unit">
-                        <span class="number" id="years">0</span>
-                        <span class="label">Years</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="number" id="months">0</span>
-                        <span class="label">Months</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="number" id="days">0</span>
-                        <span class="label">Days</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="number" id="hours">0</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="number" id="minutes">0</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="number" id="seconds">0</span>
-                        <span class="label">Seconds</span>
+                    <div class="drought-subtitle">Back when dinosaurs roamed the earth and hope was still alive</div>
+                    <div class="time-display">
+                        <div class="time-unit">
+                            <span class="number" id="years">0</span>
+                            <span class="label">Years</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number" id="months">0</span>
+                            <span class="label">Months</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number" id="days">0</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number" id="hours">0</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number" id="minutes">0</span>
+                            <span class="label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number" id="seconds">0</span>
+                            <span class="label">Seconds</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="stats-section">
-                <h2>Embarrassing Statistics</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" id="total-days">0</div>
-                        <div class="stat-label">Total Days of Suffering</div>
+            <!-- Stats Row -->
+            <div class="widget widget-half">
+                <div class="widget-header">
+                    <h3>📊 Suffering Statistics</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="stats-compact">
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-days">0</div>
+                            <div class="stat-label">Days of Misery</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="playoff-rounds">0</div>
+                            <div class="stat-label">Playoff Heartbreaks</div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="playoff-rounds">0</div>
-                        <div class="stat-label">Playoff Rounds Lost</div>
+                </div>
+            </div>
+
+            <div class="widget widget-half">
+                <div class="widget-header">
+                    <h3>💸 Marner Freedom Counter</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="marner-subtitle">Time since the $11M man escaped</div>
+                    <div class="marner-time-display">
+                        <div class="marner-time-unit">
+                            <span class="marner-number" id="marner-days">0</span>
+                            <span class="marner-label">Days</span>
+                        </div>
+                        <div class="marner-time-unit">
+                            <span class="marner-number" id="marner-hours">0</span>
+                            <span class="marner-label">Hours</span>
+                        </div>
+                        <div class="marner-time-unit">
+                            <span class="marner-number" id="marner-minutes">0</span>
+                            <span class="marner-label">Minutes</span>
+                        </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="marner-troll">
+                        <p id="marner-message">Finally free from the pressure! 🎉</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Stats Row -->
+            <div class="widget widget-third">
+                <div class="widget-header">
+                    <h3>👴 Generational Trauma</h3>
+                </div>
+                <div class="widget-content centered">
+                    <div class="big-stat">
                         <div class="stat-number" id="generations">0</div>
-                        <div class="stat-label">Generations of Disappointment</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">13</div>
-                        <div class="stat-label">Teams That Have Won Since</div>
+                        <div class="stat-label">Generations Affected</div>
                     </div>
                 </div>
             </div>
 
-            <div class="achievements-section">
-                <h2>What the Leafs HAVE Achieved Since 1967</h2>
-                <div class="achievements-list">
-                    <div class="achievement">🏆 Mastered the art of first-round exits</div>
-                    <div class="achievement">📈 Perfected raising ticket prices</div>
-                    <div class="achievement">💰 Became the most valuable team without cups</div>
-                    <div class="achievement">😭 Made humans cry every spring</div>
-                    <div class="achievement">🤡 Provided endless meme material</div>
-                    <div class="achievement">⚰️ Buried multiple generations of hopes</div>
+            <div class="widget widget-third">
+                <div class="widget-header">
+                    <h3>🏆 Other Success Stories</h3>
+                </div>
+                <div class="widget-content centered">
+                    <div class="big-stat">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Teams That Won Instead</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="fun-facts-section">
-                <h2>Things That Have Happened Since The Leafs Last Won</h2>
-                <div class="facts-container">
-                    <div class="fact-item">🚀 Humans landed on the moon (12 times!)</div>
-                    <div class="fact-item">💻 The internet was invented</div>
-                    <div class="fact-item">📱 Smartphones became a thing</div>
-                    <div class="fact-item">🇨🇦 Canada got a new flag</div>
-                    <div class="fact-item">🎮 Video games were invented and became huge</div>
-                    <div class="fact-item">🌍 The Berlin Wall fell</div>
-                    <div class="fact-item">🏒 18 different NHL teams won cups</div>
-                    <div class="fact-item">👴 Multiple generations of Leafs fans came and went</div>
+            <div class="widget widget-third">
+                <div class="widget-header">
+                    <h3>🎭 Current Mood</h3>
+                </div>
+                <div class="widget-content centered">
+                    <div class="rotating-message">
+                        <p id="troll-message">Still waiting... 🍃</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="troll-section">
-                <div class="rotating-message">
-                    <p id="troll-message">Still waiting... 🍃</p>
+            <!-- Achievements Widget -->
+            <div class="widget widget-half">
+                <div class="widget-header">
+                    <h3>🏅 "Achievements" Since 1967</h3>
                 </div>
+                <div class="widget-content">
+                    <div class="achievements-list">
+                        <div class="achievement">🎯 Perfected the art of playoff collapses</div>
+                        <div class="achievement">💰 Became world's most expensive disappointment</div>
+                        <div class="achievement">📈 Mastered the false hope business model</div>
+                        <div class="achievement">😭 Created a multi-generational trauma bond</div>
+                        <div class="achievement">🤡 Provided endless content for comedy shows</div>
+                        <div class="achievement">⚰️ Buried more dreams than a cemetery</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Facts Widget -->
+            <div class="widget widget-half">
+                <div class="widget-header">
+                    <h3>🌍 Life Happened While We Waited</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="facts-list">
+                        <div class="fact-item">🚀 12 moon landings (and counting)</div>
+                        <div class="fact-item">💻 Internet was born, grew up, had kids</div>
+                        <div class="fact-item">📱 We went from rotary phones to smartphones</div>
+                        <div class="fact-item">🇨🇦 Canada changed its flag twice</div>
+                        <div class="fact-item">🎮 Video games became a $180B industry</div>
+                        <div class="fact-item">🏒 Every other Original Six team won multiple cups</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refresh Button Widget -->
+            <div class="widget widget-full widget-action">
                 <button class="refresh-btn" onclick="window.location.reload()">
-                    Refresh for More Disappointment
+                    🔄 Refresh for Fresh Disappointment
                 </button>
             </div>
         </main>
 
         <footer>
-            <p class="disclaimer">No Leafs fans were harmed in the making of this website... they were already broken.</p>
+            <div class="footer-content">
+                <p class="disclaimer">No Leafs fans were harmed in the making of this website... they were already broken.</p>
+                <div class="footer-stats">
+                    <span>Updated in real-time • </span>
+                    <span>Accuracy guaranteed • </span>
+                    <span>Pain included free of charge</span>
+                </div>
+            </div>
         </footer>
     </div>
 
