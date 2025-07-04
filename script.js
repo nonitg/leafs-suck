@@ -2,8 +2,9 @@
 // May 2, 1967 - Game 6 at Maple Leaf Gardens
 const LEAFS_LAST_CUP = new Date('1967-05-02T22:00:00'); // Approximate end time of game
 
-// The date when Mitch Marner left the Leafs (July 1, 2025 - Free Agency Day)
-const MARNER_LEFT_DATE = new Date('2025-07-01T00:00:00'); // Free agency starts at midnight
+// The date when Mitch Marner escaped to Vegas
+// July 2, 2025 - Traded to Vegas Golden Knights
+const MARNER_ESCAPE_DATE = new Date('2025-07-02T12:00:00'); // Approximate trade announcement time
 
 // Array of trolling messages to rotate through
 const TROLL_MESSAGES = [
@@ -40,33 +41,7 @@ const MARNER_TROLL_MESSAGES = [
 let trollMessageIndex = 0;
 let marnerTrollMessageIndex = 0;
 
-// Function to calculate time difference for Marner
-function calculateMarnerTimeDifference() {
-    const now = new Date();
-    const difference = now - MARNER_LEFT_DATE;
-    
-    // If the date hasn't passed yet, show zeros or a "coming soon" message
-    if (difference < 0) {
-        return {
-            days: 0,
-            hours: 0,
-            minutes: 0,
-            isComingSoon: true
-        };
-    }
-    
-    // Calculate each unit
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    
-    return {
-        days,
-        hours,
-        minutes,
-        isComingSoon: false
-    };
-}
+
 
 // Function to calculate time difference
 function calculateTimeDifference() {
@@ -95,11 +70,52 @@ function calculateTimeDifference() {
     };
 }
 
+// Function to calculate time since Marner escaped
+function calculateMarnerEscapeTime() {
+    const now = new Date();
+    const difference = now - MARNER_ESCAPE_DATE;
+    
+    // If the trade date is in the future, return zeros
+    if (difference < 0) {
+        return {
+            years: 0,
+            months: 0,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+            totalDays: 0
+        };
+    }
+    
+    // Calculate each unit
+    const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365.25));
+    const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+    const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+    // Total days since escape
+    const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+    
+    return {
+        years,
+        months,
+        days,
+        hours,
+        minutes,
+        seconds,
+        totalDays
+    };
+}
+
 // Function to update the display
 function updateDisplay() {
     const timeDiff = calculateTimeDifference();
+    const marnerTime = calculateMarnerEscapeTime();
     
-    // Update time units
+    // Update Leafs drought time units
     document.getElementById('years').textContent = timeDiff.years.toLocaleString();
     document.getElementById('months').textContent = timeDiff.months;
     document.getElementById('days').textContent = timeDiff.days;
@@ -107,17 +123,20 @@ function updateDisplay() {
     document.getElementById('minutes').textContent = timeDiff.minutes;
     document.getElementById('seconds').textContent = timeDiff.seconds;
     
-    // Update Marner countdown
-    const marnerDiff = calculateMarnerTimeDifference();
-    if (marnerDiff.isComingSoon) {
-        document.getElementById('marner-days').textContent = "Soon™";
-        document.getElementById('marner-hours').textContent = "Soon™";
-        document.getElementById('marner-minutes').textContent = "Soon™";
-    } else {
-        document.getElementById('marner-days').textContent = marnerDiff.days.toLocaleString();
-        document.getElementById('marner-hours').textContent = marnerDiff.hours;
-        document.getElementById('marner-minutes').textContent = marnerDiff.minutes;
-    }
+    // Update Marner escape time units
+    const marnerYears = document.getElementById('marner-years');
+    const marnerMonths = document.getElementById('marner-months');
+    const marnerDays = document.getElementById('marner-days');
+    const marnerHours = document.getElementById('marner-hours');
+    const marnerMinutes = document.getElementById('marner-minutes');
+    const marnerSeconds = document.getElementById('marner-seconds');
+    
+    if (marnerYears) marnerYears.textContent = marnerTime.years.toLocaleString();
+    if (marnerMonths) marnerMonths.textContent = marnerTime.months;
+    if (marnerDays) marnerDays.textContent = marnerTime.days;
+    if (marnerHours) marnerHours.textContent = marnerTime.hours;
+    if (marnerMinutes) marnerMinutes.textContent = marnerTime.minutes;
+    if (marnerSeconds) marnerSeconds.textContent = marnerTime.seconds;
     
     // Update stats
     document.getElementById('total-days').textContent = timeDiff.totalDays.toLocaleString();
@@ -311,6 +330,8 @@ console.log('%cFun fact: The Leafs haven\'t won since before JavaScript was inve
 // Export for potential use in other scripts
 window.LeafsDroughtTracker = {
     calculateTimeDifference,
+    calculateMarnerEscapeTime,
     updateDisplay,
-    LEAFS_LAST_CUP
+    LEAFS_LAST_CUP,
+    MARNER_ESCAPE_DATE
 }; 
